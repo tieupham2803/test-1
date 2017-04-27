@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+ .bg{
+background-image: url("background3.jpg");
+
+    /* Full height */
+    height: 400px;
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.btnt{
+    margin-top: 10px;
+}
