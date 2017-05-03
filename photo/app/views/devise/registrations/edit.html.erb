@@ -18,6 +18,20 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
+    <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password,class:'form-control', autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password,class:'form-control', autocomplete: "off" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
 
 
   <div class="field">
@@ -46,14 +60,7 @@
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation,class:'form-control', autocomplete: "off" %>
       </div>
-  <div class="actions">
-    <%= f.submit "Update", class:'btn btn-primary' %>
-  </div>
-<% end %>
-
 
 <%= link_to "Back", :back %>
-</div>
-<div class="col-md-3"></div>
 
 </div>
