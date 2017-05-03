@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427055040) do
+ActiveRecord::Schema.define(version: 20170503130832) do
+
+  create_table "image_comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "image_id"
+    t.string   "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "review"
+    t.string   "file"
+    t.datetime "created_at", null: false
+    t.integer  "like"
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
@@ -39,8 +56,8 @@ ActiveRecord::Schema.define(version: 20170427055040) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "image"
     t.integer  "age"
+    t.string   "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
