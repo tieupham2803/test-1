@@ -1,3 +1,17 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar-form .input-group {
+    display: table;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.navbar-form .input-group .input-group-addon,
+.navbar-form .input-group .input-group-btn {
+    white-space: nowrap;
+    width: 1%;
+}
+.navbar-form .input-group .form-control {
+    width: 100%;
+}
