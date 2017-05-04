@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :sign_up, keys: [:name, :age]
 
     # account_updateのときに、name,ageを許可する
-      devise_parameter_sanitizer.permit :account_update, keys: [:name, :age]
+      devise_parameter_sanitizer.permit :account_update, keys: [:name, :age, :avatar]
   end
 end

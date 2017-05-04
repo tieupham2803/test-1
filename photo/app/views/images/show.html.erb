@@ -1,34 +1,52 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6 well">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @image.user.email %>
-</p>
+<!--<p>-->
+  <!--<strong>User:</strong>-->
+  <!--<%= @image.user.email %>-->
+<!--</p>-->
 
-<p>
-  <strong>Review:</strong>
-  <%= @image.review %>
-</p>
+<!--<p>-->
+  <!--<strong>Review:</strong>-->
+  <!--<%= @image.review %>-->
+<!--</p>-->
 
-<p>
-  <strong>File:</strong>
-  <%= image_tag @image.file %>
-</p>
+<!--<p>-->
+  <!--<strong>File:</strong>-->
+  <!--<%= image_tag @image.file %>-->
+<!--</p>-->
 
-<p>
-  <strong>Created at:</strong>
-  <%= @image.created_at %>
-</p>
+<!--<p>-->
+  <!--<strong>Created at:</strong>-->
+  <!--<%= @image.created_at %>-->
+<!--</p>-->
 
-<p>
-  <strong>Like:</strong>
-  <%= @image.like %>
-</p>
+<!--<p>-->
+  <!--<strong>Like:</strong>-->
+  <!--<%= @image.like %>-->
+<!--</p>-->
 
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
 
-<h2>コメントフォーム</h2>
+<!--<%= link_to 'Back', images_path %>-->
+<div class="row">
+  <div class="col-md-2">
+    <%= image_tag(current_user.avatar.url(:thumb)) %></div>
+  <div class="col-md-8 name_post">
+    <h3>  <%= current_user.name  %></h3>
+    <h4>  <%= @image.created_at %></h4>
+  </div>
+  <div class="col-md-2">
+    <h3> <%= link_to 'Edit', edit_image_path(@image) %></h3></div>
+</div>
+<h3> <%= @image.review %></h3>
+<div class="post">
+  <%= image_tag @image.file ,class:"images_post"%>
+
+</div>
+<br><br>
+
 
 <%= form_for(@image_comment) do |f| %>
 
@@ -43,7 +61,7 @@
 </div>
 
 <% end %>
-<h2>コメント一覧</h2>
+
 
 <ul>
   <% @image.image_comment.each do |image_comment|%>
@@ -51,3 +69,6 @@
     (<i><%= image_comment.user_id %></i>)</li>
   <% end %>
 </ul>
+  </div>
+  <div class="col-md-3"></div>
+</div>

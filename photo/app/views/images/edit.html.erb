@@ -1,6 +1,11 @@
 <h1>Editing Image</h1>
-
+<div class="row">
+  <div class="col-md-5">
 <%= render 'form', image: @image %>
-
-<%= link_to 'Show', @image %> |
+<%= image_tag @image.file ,class:"images_post"%>
+<%= link_to 'Show', images_path %> |
 <%= link_to 'Back', images_path %>
+  </div>
+  <div class="col-md-7"></div>
+</div>
+
