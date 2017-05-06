@@ -40,7 +40,7 @@
   <div class="col-md-2">
     <h3> <%= link_to 'Edit', edit_image_path(@image) %></h3></div>
 </div>
-<h3> <%= @image.review %></h3>
+<h3> <%= @image.review.html_safe %></h3>
 <div class="post">
   <%= image_tag @image.file ,class:"images_post"%>
 

@@ -1,3 +1,4 @@
+<%= tinymce %>
 <%= form_for(@image, {multipart: true}) do |f| %>
   <% if image.errors.any? %>
     <div id="error_explanation">
@@ -13,7 +14,7 @@
 
   <div class="field">
     <%= f.label :review %>
-    <%= f.text_field :review %>
+    <%= f.text_area :review, :class => "tinymce", :rows => 40, :cols => 120  %>
   </div>
 
   <div class="field">
